@@ -27,15 +27,15 @@ describe("post request for /login", function() {
   it("should redirect ", function(done) {
     request(app)
       .post("/login")
-      .send({ userName: "tilak", password: "123" })
+      .send({ userName: "akanksha", password: "123" })
       .expect(302)
       .end(done);
   });
 
-  it("should redirect to /todos when username and passwordare correct", function(done) {
+  it("should redirect to /todos when username and password is correct", function(done) {
     request(app)
       .post("/login")
-      .send({ userName: "tilak", password: "123" })
+      .send({ userName: "akanksha", password: "123" })
       .expect("location", "/todos")
       .end(done);
   });
@@ -43,7 +43,7 @@ describe("post request for /login", function() {
   it("should not redirect when username and passwordare are not correct", function(done) {
     request(app)
       .post("/login")
-      .send({ userName: "tilak", password: "1233" })
+      .send({ userName: "tilak", password: "123" })
       .expect("Try again")
       .end(done);
   });
@@ -65,10 +65,10 @@ describe("post request for /newaccount", function() {
       .end(done);
   });
 
-  it("should return error when username/password is same to privious", function(done) {
+  it("should return error when username is same to privious", function(done) {
     request(app)
       .post("/newaccount")
-      .send({ userName: "tilak", password: "pqr" })
+      .send({ userName: "akanksha", password: "pqr" })
       .expect("Username already exists")
       .end(done);
   });

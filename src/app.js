@@ -109,16 +109,17 @@ const updateTodoHandler = function(req, res) {
   updateTodo(req, res);
   updateUsersTodoFile(userTodos);
 };
-// initialize
-const userLoginData = loadUserLoginData();
-users = new Users(userLoginData);
-userTodos = getUserTodos();
 
-const getAllTodosPage = (req, res, next) => {
+// initialize
+const userLoginData = loadUserLoginData(fs);
+users = new Users(userLoginData);
+userTodos = getUserTodos(fs);
+
+const getAllTodosPage = (req, res) => {
   res.sendFile(path.join(__dirname, "../public", ALL_TODOS_PAGE_PATH));
 };
 
-const getSpecificTodoPage = (req, res, next) =>
+const getSpecificTodoPage = (req, res) =>
   res.sendFile(path.join(__dirname, "../public", TODO_PAGE_PATH));
 
 app.use(cookieHandler);
