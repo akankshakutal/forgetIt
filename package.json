@@ -4,14 +4,14 @@
   "description": "forget it",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.4",
-    "sinon": "^7.2.3",
-    "taiko": "^0.5.0"
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
     "nodemon": "^1.18.9",
-    "supertest": "^3.4.2"
+    "supertest": "^3.4.2",
+    "sinon": "^7.2.3",
+    "taiko": "^0.5.0"
   },
   "scripts": {
     "test": "mocha",
