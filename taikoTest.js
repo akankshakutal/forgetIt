@@ -18,8 +18,10 @@ const {
     await click(inputField({ name: "pwd" }));
     await write("123", into("pwd:"));
     await click(button("sign in"));
+    await click(button("edit"));
+    await click(textField({ name: "todoItemText" }));
   } catch (e) {
-    console.error(e);
+    console.error(hello);
   } finally {
     await closeBrowser();
   }
