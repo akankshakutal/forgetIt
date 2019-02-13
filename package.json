@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "directories": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
