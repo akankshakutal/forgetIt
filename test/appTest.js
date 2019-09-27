@@ -68,7 +68,7 @@ describe("post request for /newaccount", function() {
   it("should return error when username is same to privious", function(done) {
     request(app)
       .post("/newaccount")
-      .send({ userName: "akanksha", password: "pqr" })
+      .send({ userName: "akanksha", password: "123" })
       .expect("Username already exists")
       .end(done);
   });
